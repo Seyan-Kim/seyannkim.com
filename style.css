@@ -1,0 +1,931 @@
+/* =========================================================
+   1. RESET & BASE STYLING
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #0b0b0c;
+    color: #e2e2e4;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+    border-bottom: 1px solid #1c1c1f;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+/* =========================================================
+   2. HERO SECTION
+========================================================= */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('hero.png') center/cover no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content-left {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.hero-label {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #a5a5af;
+    margin-bottom: 12px;
+}
+
+.hero-content-left h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.hero-content-left .sub-text-kr {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccccd0;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.hero-content-left .sub-text-en {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #88888c;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.enter-archive {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffffff;
+    transition: opacity 0.3s;
+}
+
+.enter-archive:hover {
+    opacity: 0.7;
+}
+
+.enter-archive .arrow {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.enter-archive .text {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Right Navigation */
+.hero-nav-right {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+}
+
+.hero-nav-right ul {
+    list-style: none;
+}
+
+.hero-nav-right ul li {
+    margin: 25px 0;
+}
+
+.hero-nav-right ul li a {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #ffffff;
+    transition: color 0.3s, padding-right 0.3s;
+}
+
+.hero-nav-right ul li a:hover {
+    color: #a5a5af;
+    padding-right: 10px;
+}
+
+/* =========================================================
+   3. ABOUT SECTION
+========================================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-img-box img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(20%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.about-text-box .section-number {
+    font-size: 0.85rem;
+    color: #7f858b;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.about-text-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.about-text-box h3 span {
+    font-size: 1.1rem;
+    color: #88888c;
+    font-weight: 300;
+    margin-left: 8px;
+}
+
+.about-text-box .lead-text {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 25px;
+    border-left: 2px solid #555;
+    padding-left: 15px;
+}
+
+.about-text-box p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #b8b8bc;
+    font-weight: 300;
+}
+
+.career-highlights {
+    margin-top: 40px;
+}
+
+.career-highlights h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.career-highlights ul {
+    list-style-position: inside;
+    color: #98989c;
+}
+
+.career-highlights ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.epk-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.epk-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    border: 1px solid #333338;
+    background: #111114;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.epk-download:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/* =========================================================
+   4. FEATURED PROJECT (1929 Anxiety)
+========================================================= */
+.anxiety-section {
+    background:
+        radial-gradient(
+            circle at 18% 28%,
+            rgba(74, 98, 116, 0.14),
+            transparent 38%
+        ),
+        #090a0c;
+}
+
+.anxiety-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.anxiety-heading .section-title {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.anxiety-kicker {
+    margin-top: 10px;
+    color: #7f858b;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+}
+
+.anxiety-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: clamp(40px, 7vw, 100px);
+    align-items: center;
+}
+
+.anxiety-artwork {
+    overflow: hidden;
+    background: #111317;
+    border: 1px solid #202329;
+}
+
+.anxiety-artwork img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.anxiety-copy {
+    max-width: 520px;
+}
+
+.anxiety-lead {
+    margin-bottom: 28px;
+    color: #ffffff;
+    font-size: clamp(1.45rem, 2.8vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.anxiety-copy > p:not(.anxiety-lead) {
+    margin-bottom: 18px;
+    color: #aeb1b6;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
+    word-break: keep-all;
+}
+
+.anxiety-listen-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 38px;
+}
+
+.anxiety-listen-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 52px;
+    padding: 14px 16px;
+    border: 1px solid #292c31;
+    color: #d9dadd;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.anxiety-listen-links a:hover {
+    background: #f2f2f2;
+    border-color: #f2f2f2;
+    color: #08090b;
+}
+
+/* =========================================================
+   5. PROJECTS & GALLERY BASE
+========================================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #16161a;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* PROJECTS 섹션 전용 1:1 정사각형 고정 */
+#projects .gallery-item {
+    aspect-ratio: 1 / 1;
+}
+
+#projects .gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   7. PHOTOS SECTION (도면 구조 100% 구현)
+========================================================= */
+#photos .gallery-grid {
+    display: grid;
+    /* 1번(1:1) + 2번(16:9) 높이에 3번(9:16) 비율이 딱 맞아떨어지는 1.14 : 1 비율 */
+    grid-template-columns: 1.14fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+    align-items: stretch;
+}
+
+#photos .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #16161a;
+    width: 100%;
+}
+
+/* PHOTO 01 : 왼쪽 상단 (1:1) */
+#photos .gallery-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* PHOTO 02 : 왼쪽 하단 (16:9) */
+#photos .gallery-item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+    aspect-ratio: 16 / 9 !important;
+}
+
+/* PHOTO 03 : 오른쪽 (1번 상단 ~ 2번 하단까지 높이 완전 일치 + 9:16 유지) */
+#photos .gallery-item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 100% !important;
+    aspect-ratio: 9 / 16 !important;
+}
+
+/* 이미지 크롭 및 찌그러짐 방지 */
+#photos .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+    display: block;
+}
+
+/* 캡션 오버레이 (모든 카드 왼쪽 하단 동일 여백) */
+#photos .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0) 100%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* 오버레이 캡션 (모든 카드 왼쪽 하단 동일 여백) */
+#photos .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0) 100%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* =========================================================
+   8. CONTACT SECTION
+========================================================= */
+.contact-section {
+    background-color: #050506;
+    padding: 100px 0 40px 0;
+    text-align: center;
+}
+
+.contact-desc {
+    color: #78787c;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 80px;
+}
+
+.link-card {
+    background: #111113;
+    border: 1px solid #222225;
+    padding: 18px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.link-card:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #16161a;
+    padding-top: 40px;
+    color: #444448;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   9. MOBILE RESPONSIVE DESIGN (<= 768px)
+========================================================= */
+@media (max-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background: #090a0c;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+        position: fixed;
+        top: -100px;
+        left: 16px;
+        z-index: 9999;
+        padding: 10px 14px;
+        background: #ffffff;
+        color: #000000;
+        font-size: 0.8rem;
+    }
+
+    .skip-link:focus {
+        top: 16px;
+    }
+
+    /* Mobile Hero */
+    .hero-section {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100svh;
+        min-height: 680px;
+        padding: 0;
+        background-image: url("hero.png");
+        background-size: cover;
+        background-position: 52% center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(5, 7, 9, 0.18) 0%,
+            rgba(5, 7, 9, 0.08) 35%,
+            rgba(5, 7, 9, 0.42) 68%,
+            rgba(5, 7, 9, 0.88) 100%
+        );
+        z-index: 1;
+    }
+
+    .hero-nav-right {
+        position: absolute;
+        top: max(24px, env(safe-area-inset-top));
+        left: 20px;
+        right: 20px;
+        z-index: 4;
+        width: auto;
+        text-align: left;
+    }
+
+    .hero-nav-right ul {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        align-items: start;
+        row-gap: 12px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .hero-nav-right ul li {
+        margin: 0;
+    }
+
+    .hero-nav-right ul li:nth-child(even) {
+        text-align: right;
+    }
+
+    .hero-nav-right ul li a {
+        display: inline-block;
+        padding: 3px 0;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 0.66rem;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 0.13em;
+        white-space: nowrap;
+    }
+
+    .hero-nav-right ul li a:hover {
+        padding-right: 0;
+        color: #ffffff;
+    }
+
+    .hero-content-left {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: calc(34px + env(safe-area-inset-bottom));
+        z-index: 3;
+        display: grid;
+        justify-items: start;
+        max-width: none;
+        width: auto;
+        text-align: left;
+    }
+
+    .hero-label {
+        order: 1;
+        margin: 0 0 10px;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 0.63rem;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.19em;
+    }
+
+    .hero-content-left h1 {
+        order: 2;
+        margin: 0 0 20px;
+        color: #ffffff;
+        font-size: clamp(3.25rem, 15vw, 4.65rem);
+        font-weight: 300;
+        line-height: 0.84;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+    }
+
+    .hero-content-left .sub-text-kr {
+        order: 3;
+        margin: 0 0 12px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.94rem;
+        font-weight: 300;
+        line-height: 1.62;
+        letter-spacing: -0.015em;
+        word-break: keep-all;
+    }
+
+    .hero-content-left .sub-text-en {
+        order: 4;
+        margin: 0 0 24px;
+        color: rgba(255, 255, 255, 0.52);
+        font-size: 0.82rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.5;
+    }
+
+    .enter-archive {
+        order: 5;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 9px;
+        width: auto;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .enter-archive .arrow {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    .enter-archive .text {
+        font-size: 0.67rem;
+        letter-spacing: 0.16em;
+    }
+
+    /* Shared Mobile Section */
+    .section {
+        padding: 78px 0;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        margin-bottom: 34px;
+        font-size: 1.55rem;
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: 0.16em;
+    }
+
+    /* Mobile About */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-img-box img {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .about-text-box h3 {
+        margin-bottom: 18px;
+        font-size: 1.55rem;
+        line-height: 1.25;
+    }
+
+    .about-text-box h3 span {
+        display: block;
+        margin-top: 5px;
+        margin-left: 0;
+        font-size: 0.8rem;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+    }
+
+    .about-text-box .lead-text {
+        margin-bottom: 22px;
+        padding-left: 13px;
+        font-size: 1.02rem;
+        line-height: 1.65;
+    }
+
+    .about-text-box p {
+        font-size: 0.94rem;
+        line-height: 1.82;
+        word-break: keep-all;
+    }
+
+    .career-highlights {
+        margin-top: 32px;
+    }
+
+    .career-highlights ul li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .epk-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Mobile 1929 Anxiety */
+    .anxiety-heading {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .anxiety-heading .section-title {
+        margin-top: 14px;
+        margin-bottom: 0;
+        text-align: left;
+        font-size: clamp(2rem, 10.5vw, 3.1rem);
+        line-height: 0.96;
+        letter-spacing: -0.025em;
+    }
+
+    .anxiety-kicker {
+        margin-top: 8px;
+        font-size: 0.63rem;
+        letter-spacing: 0.14em;
+    }
+
+    .anxiety-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .anxiety-artwork {
+        border: 0;
+    }
+
+    .anxiety-copy {
+        max-width: none;
+    }
+
+    .anxiety-lead {
+        margin-bottom: 22px;
+        font-size: 1.42rem;
+        line-height: 1.5;
+    }
+
+    .anxiety-copy > p:not(.anxiety-lead) {
+        margin-bottom: 16px;
+        font-size: 0.93rem;
+        line-height: 1.82;
+    }
+
+    .anxiety-listen-links {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 28px;
+    }
+
+    .anxiety-listen-links a {
+        min-height: 50px;
+        padding: 13px 14px;
+        font-size: 0.7rem;
+    }
+
+    /* Mobile Live Clips */
+    .live-section .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Mobile Photos (Masonry 1열) */
+    #photos .gallery-grid {
+        column-count: 1;
+        column-gap: 0;
+    }
+
+    #photos .gallery-item {
+        margin-bottom: 16px;
+    }
+
+    .gallery-item {
+        border-radius: 0;
+    }
+
+    .item-overlay {
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 18px;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.72),
+            transparent 55%
+        );
+        opacity: 1;
+    }
+
+    .item-overlay .project-type {
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+    }
+
+    .item-overlay h3 {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    /* Mobile Contact */
+    .contact-section {
+        padding: 78px 0 32px;
+        text-align: left;
+    }
+
+    .contact-desc {
+        margin-bottom: 28px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 58px;
+    }
+
+    .link-card {
+        padding: 15px 12px;
+        border-radius: 0;
+        font-size: 0.73rem;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 28px;
+        font-size: 0.72rem;
+        line-height: 1.5;
+    }
+}
+
+/* =========================================================
+   10. VERY NARROW PHONES (<= 390px)
+========================================================= */
+@media (max-width: 390px) {
+    .hero-nav-right ul li a {
+        font-size: 0.6rem;
+        letter-spacing: 0.09em;
+    }
+
+    .hero-content-left h1 {
+        font-size: 3.05rem;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+}
